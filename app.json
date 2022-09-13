@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/navigator/index",
+    "pages/comment/index",
+    "pages/photo/index",
+    "pages/egg/index",
+    "pages/login/index",
+    "pages/setting/index",
+    "pages/setting_info/index",
+    "pages/setting_photo/index",
+    "pages/setting_comment/index",
+    "pages/setting_hotel/index",
+    "pages/setting_attend/index",
+    "pages/setting_egg/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#242424",
+    "navigationBarTitleText": "小小的婚礼",
+    "navigationBarTextStyle": "white",
+    "navigationStyle": "custom",
+    "backgroundColor": "#242424"
+  },
+  "tabBar": {
+    "color": "",
+    "selectedColor": "#31869B",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "text": "请柬",
+        "pagePath": "pages/index/index",
+        "iconPath": "/images/black-gold/icon1-1.png",
+        "selectedIconPath": "/images/black-gold/icon1-2.png"
+      },
+      {
+        "text": "相册",
+        "pagePath": "pages/photo/index",
+        "iconPath": "/images/icons/同心锁.png",
+        "selectedIconPath": "/images/icons/同心锁.png"
+      },
+      {
+        "text": "酒店导航",
+        "pagePath": "pages/navigator/index",
+        "iconPath": "/images/black-gold/icon3-1.png",
+        "selectedIconPath": "/images/black-gold/icon3-2.png"
+      },
+      {
+        "pagePath": "pages/comment/index",
+        "text": "故事",
+        "iconPath": "/images/icons/结束直播.png",
+        "selectedIconPath": "/images/icons/开启直播.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "entryPagePath": "pages/index/index"
+}
