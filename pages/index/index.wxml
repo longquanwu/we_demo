@@ -3,13 +3,13 @@
 
   <image src="{{$photos[$photos.length - 1].url}}" class="swiper" mode="aspectFill"></image>
 
-  <view class="cover-container center" bindtouchstart="start" bindtouchmove="move">
+  <view class="cover-container center" bindtouchstart="start" bindtouchmove="move" bindtap="">
     <view class="letter">
       <view class="letter-box animated rollIn" bindtap="toggleCover">
-        <image class="letter-img swing animated infinite slow delay-1s" src="/images{{$style ? '/' + $style : '' }}/letter.svg" mode="aspectFit"></image>
+        <image class="letter-img swing animated infinite slow delay-1s" src="/images/black-gold/letter.svg" mode="aspectFit"></image>
       </view>
     </view>
-    <view class="cover animated slow {{isShowCover ? 'zoomInDown2' : 'zoomOutUp2'}} {{isFirst ? 'delay-0-7s' : ''}}">
+    <view hidden="{{isShowCover ? false : true}}" class="cover animated slow {{isShowCover ? 'zoomInDown2' : 'zoomOutUp2'}} {{isFirst ? 'delay-0-7s' : ''}}">
       <view class="max ele-box overflow">
         <!-- <ui-background type="1" mixed="{{false}}"></ui-background> -->
       </view>
@@ -51,11 +51,15 @@
             <view class="mar-b8 animated zoomIn delay-6s">浙江省·湖州市</view>
             <view class="animated zoomIn delay-6-2s">莫干山·裸心堡</view>
           </view>
-
         </view>
       </view>
     </view>
+
+    <view hidden="{{isShowCover ? true : false}}">
+      <map class="map border shadow100" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" bindmarkertap="markertap" show-location show-compass></map>
+    </view>
   </view>
+
 
   <include src="/template/system.wxml" />
 </view>

@@ -1,45 +1,54 @@
-.swiper{
+.swiper {
   height: 100vh;
   width: 100vw;
 }
-.bg-img{
+
+.bg-img {
   height: 100%;
   width: 100%;
 }
-.cover-container{
+
+.cover-container {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
-.cover{
+
+.cover {
   width: 90vw;
   padding: 20rpx;
   transform-origin: center top;
 }
-.ele-box{
+
+.ele-box {
   position: absolute;
   left: 0;
   top: 0;
   box-sizing: border-box;
   padding: 40rpx;
 }
-.name-box{
+
+.name-box {
   padding: 0 60rpx;
   margin-bottom: 40rpx;
   font-size: 50rpx;
 }
-.info-box{
+
+.info-box {
   margin-bottom: 40rpx;
 }
-.title-box{
+
+.title-box {
   padding: 60rpx 0 20rpx 0;
 }
-.hanzi{
+
+.hanzi {
   width: 90rpx;
   height: 90rpx;
 }
-.letter{
+
+.letter {
   width: 100%;
   text-align: center;
   height: 120rpx;
@@ -49,12 +58,20 @@
   top: -60rpx;
   z-index: 999;
 }
-.letter-box{
+
+.letter-box {
   height: 120rpx;
   width: 120rpx;
   display: inline-block;
 }
-.letter-img{
+
+.letter-img {
   width: 100%;
   height: 100%;
+}
+
+.map {
+  top: 45%;
+  width: 90vw;
+  height: 600rpx;
 }

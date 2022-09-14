@@ -51,6 +51,9 @@ const mixin = {
     // 点击出现心型
     $showHeart(e, y) {
       const component = this.selectComponent('#tap')
+      if (component == null) {
+        return
+      }
       // 主动调用
       if (y) {
         component.showHeart(e, y)

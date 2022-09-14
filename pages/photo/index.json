@@ -2,7 +2,6 @@
   "usingComponents": {
     "ui-background": "/components/background/index",
     "ui-tap-shape": "/components/tap-shape/index",
-    "ui-loading": "/components/loading/index",
     "ui-music": "/components/music/index",
     "photo-pinterest": "/components/photo-pinterest/index"
   },
