@@ -1,24 +1,30 @@
-const { api } = require('./request.js')
-const { dateFormat } = require('../lib/util.js')
+const {
+  api
+} = require('./request.js')
+const {
+  dateFormat
+} = require('../lib/util.js')
 
 function parseComment(data) {
-  const { time } = data
+  const {
+    time
+  } = data
   data.time = dateFormat(time, 'yyyy.mm.dd HH:MM:ss')
   return data
 }
 
 // 新增评论
-const add = data => api('comment/add', data).then(parseComment)
+const add = data => api('addComment', data).then(parseComment)
 
 // 获取所有评论
 const getAllList = () =>
-  api('comment/getAllList').then(res => {
+  api('listComment').then(res => {
     return res.map(parseComment)
   })
 
 // 获取分页评论
 const getList = data =>
-  api('comment/getList', data).then(res => {
+  api('listComment', data).then(res => {
     return res.map(parseComment)
   })
 

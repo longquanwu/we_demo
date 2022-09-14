@@ -1,6 +1,10 @@
+import { initUserInfo } from './services/user';
+
 //app.js
 App({
   onLaunch: function () {
+    // 拉取用户信息并保存本地
+    initUserInfo();
     // global数据
     this.globalData = {
       // 全局的状态

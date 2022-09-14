@@ -3,7 +3,7 @@
   position: fixed;
   z-index: 200;
   left: 20rpx;
-  top: 100rpx;
+  top: 20rpx;
   display: flex;
   justify-content: flex-start;
   align-items:flex-start;

@@ -63,7 +63,7 @@ page{
   text-align: center;
   position: absolute;
   width: 100%;
-  top: 40%;
+  top: 60%;
 }
 /*右下角切换按钮*/
 .toggle-box{

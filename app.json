@@ -15,11 +15,10 @@
     "pages/setting_egg/index"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#242424",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFF",
     "navigationBarTitleText": "小小的婚礼",
-    "navigationBarTextStyle": "white",
-    "navigationStyle": "custom",
-    "backgroundColor": "#242424"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "color": "",

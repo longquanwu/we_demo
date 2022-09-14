@@ -14,6 +14,9 @@ page({
     $pageReady: true,
     $ready: true,
     height: 0,
+    videoUrl: {
+      'wedding': 'https://wulongquan.oss-cn-hangzhou.aliyuncs.com/we/images/01.mp4'
+    },
     // 评论的列表
     list: [],
     // 用户信息
@@ -36,11 +39,10 @@ page({
     _id: null
   },
   onLoad() {
-    console.log('load')
     wx.getSystemInfo({
       success: ({ windowHeight }) => {
         this.setData({
-          height: windowHeight - 80
+          height: windowHeight - 225
         })
       }
     })
@@ -144,8 +146,7 @@ page({
       fn()
       return 
     }
-    
-    
+
     wx.getUserProfile({
       lang: 'zh_CN',
       desc: '获取头像昵称',
