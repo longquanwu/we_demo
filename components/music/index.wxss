@@ -2,8 +2,8 @@
 .music-box{
   position: fixed;
   z-index: 200;
-  left: 20rpx;
-  top: 20rpx;
+  left: 30rpx;
+  top: 30rpx;
   display: flex;
   justify-content: flex-start;
   align-items:flex-start;

@@ -4,15 +4,7 @@
     "pages/navigator/index",
     "pages/comment/index",
     "pages/photo/index",
-    "pages/egg/index",
-    "pages/login/index",
-    "pages/setting/index",
-    "pages/setting_info/index",
-    "pages/setting_photo/index",
-    "pages/setting_comment/index",
-    "pages/setting_hotel/index",
-    "pages/setting_attend/index",
-    "pages/setting_egg/index"
+    "pages/login/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -38,12 +30,6 @@
         "selectedIconPath": "/images/icons/同心锁.png"
       },
       {
-        "text": "酒店导航",
-        "pagePath": "pages/navigator/index",
-        "iconPath": "/images/black-gold/icon3-1.png",
-        "selectedIconPath": "/images/black-gold/icon3-2.png"
-      },
-      {
         "pagePath": "pages/comment/index",
         "text": "故事",
         "iconPath": "/images/icons/结束直播.png",
@@ -52,5 +38,5 @@
     ]
   },
   "sitemapLocation": "sitemap.json",
-  "entryPagePath": "pages/index/index"
+  "entryPagePath": "pages/photo/index"
 }

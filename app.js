@@ -1,4 +1,5 @@
 import { initUserInfo } from './services/user';
+const Event = require('./lib/event.js')
 
 //app.js
 App({
@@ -17,12 +18,7 @@ App({
       // 全局的信息（婚礼信息等）
       info: {},
       audio: null,
-      /**
-       *  是否为用户的动作 
-       *  wx.xx 等一些API会触发小程序的APP onShow onHide 回调
-       *  比如wx.previewImage, wx.chooseImage，实际业务屏蔽这种回调
-       *  玛德  真机对createInnerAudioContext无效
-       */
+
       isUserAction: false
     }
     // 创建背景音乐
@@ -32,6 +28,16 @@ App({
     audio.src = "https://wulongquan.oss-cn-hangzhou.aliyuncs.com/we/music/canon.mp3"
     audio.play()
     this.globalData.audio = audio
+
+    // 全局状态改变
+    Event.on('stateChange', data => {
+      Object.assign(this.globalData.state, data)
+      if (data.isMusicPlay) {
+        audio.play()
+      } else {
+        audio.pause()
+      }
+    })
   },
   onHide() {
     const {

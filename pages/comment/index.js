@@ -1,6 +1,7 @@
 const page = require('../../framework/page.js')
 const comment = require('../../services/comment.js')
 const attend = require('../../services/attend.js')
+const Event = require('../../lib/event.js')
 const app = getApp()
 
 function createGetUserInfo(msg, showLayer) {
@@ -55,6 +56,10 @@ page({
     })
   },
   onShow() {
+    Event.emit('stateChange', {
+      isMusicPlay: false
+    })
+
     if (isFirstShow) {
       isFirstShow = false
       return
@@ -71,6 +76,8 @@ page({
       list = []
     }
     return comment.getList({ pageNum }).then(res => {
+      this.$hideLoading()
+
       if (res.length) {
         this.setData({
           list: list.concat(res),
