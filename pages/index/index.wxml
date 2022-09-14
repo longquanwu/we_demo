@@ -1,6 +1,4 @@
 <view class="container {{$style}}" bindtap="$showHeart">
-  <ui-background type="1" mixed="{{false}}"></ui-background>
-
   <image src="{{$photos[$photos.length - 1].url}}" class="swiper" mode="aspectFill"></image>
 
   <view class="cover-container center" bindtouchstart="start" bindtouchmove="move" bindtap="">
@@ -56,7 +54,21 @@
     </view>
 
     <view hidden="{{isShowCover ? true : false}}">
-      <map class="map border shadow100" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" bindmarkertap="markertap" show-location show-compass></map>
+      <map class="map border shadow100" scale="14" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" bindmarkertap="markertap" show-location show-compass></map>
+
+      <view class="flex-center-wrap flex-justify-around phone-container">
+        <view class="phone-call bounceIn delay-0-1s animated slow" bindtap="$phoneCall" data-num="{{$phone1}}">
+          <image src="/images/black-gold/groom.svg" class="person-icon"></image>
+          <view>呼叫龙泉</view>
+        </view>
+        <view class="zoomIn delay-1-2s slow animated">
+          <ui-heart count="3" double="{{true}}"></ui-heart>
+        </view>
+        <view class="phone-call bounceIn delay-0-1s animated slow" bindtap="$phoneCall" data-num="{{$phone2}}">
+          <image src="/images/black-gold/bride.svg" class="person-icon"></image>
+          <view>呼叫芮仟</view>
+        </view>
+      </view>
     </view>
   </view>
 

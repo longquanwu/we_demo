@@ -9,10 +9,10 @@ page({
     current: 0,
     isMoving: false,
     y: 0,
+    $phone1: 13340019082,
+    $phone2: 13910291734,
     $photos: [{
-      url: "https://wulongquan.oss-cn-hangzhou.aliyuncs.com/we/images/01.jpeg?x-oss-process=image/resize,l_800"
-    }, {
-      url: "https://wulongquan.oss-cn-hangzhou.aliyuncs.com/we/images/02.jpeg?x-oss-process=image/resize,l_800"
+      url: "https://wulongquan.oss-cn-hangzhou.aliyuncs.com/we/images/03.jpg?x-oss-process=image/resize,l_800"
     }],
     "latitude": 30.599615,
     "longitude": 119.882985,

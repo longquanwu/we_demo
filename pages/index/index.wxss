@@ -75,3 +75,34 @@
   width: 90vw;
   height: 600rpx;
 }
+
+.flex-wrap,
+.flex-center-wrap,
+.flex-multi-row{
+  margin-top: 50px;
+  display: flex;
+}
+.flex-center-wrap {
+  align-items: center;
+}
+.flex-justify-between {
+  justify-content: space-between;
+}
+.flex-justify-around {
+  justify-content: space-around;
+}
+.flex-justify-center {
+  justify-content: center;
+}
+.flex-multi-row {
+  flex-wrap: wrap;
+}
+
+.phone-call{
+  text-align: center;
+  font-size: 24rpx;
+}
+.person-icon{
+  height: 100rpx;
+  width: 100rpx;
+}

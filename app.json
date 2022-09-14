@@ -13,7 +13,7 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "color": "",
+    "color": "black",
     "selectedColor": "#31869B",
     "backgroundColor": "#fff",
     "list": [
@@ -38,5 +38,5 @@
     ]
   },
   "sitemapLocation": "sitemap.json",
-  "entryPagePath": "pages/photo/index"
+  "entryPagePath": "pages/index/index"
 }

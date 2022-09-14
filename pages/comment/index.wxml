@@ -12,7 +12,6 @@
       <view class="empty"></view>
       <view class="item-wrap" wx:for="{{list}}" wx:key="index">
         <view class="list-item border shadow flex-wrap">
-          <ui-background />
           <image src="{{item.avatarUrl}}" class="avatar"></image>
           <view class="flex">
             <view class="flex-center-wrap name">
