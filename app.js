@@ -3,7 +3,7 @@ const Event = require('./lib/event.js')
 
 //app.js
 App({
-  onLaunch: function () {
+  onLaunch() {
     // 拉取用户信息并保存本地
     initUserInfo();
     // global数据
@@ -18,7 +18,6 @@ App({
       // 全局的信息（婚礼信息等）
       info: {},
       audio: null,
-
       isUserAction: false
     }
     // 创建背景音乐

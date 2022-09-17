@@ -1,5 +1,6 @@
 const page = require('../../framework/page.js')
 const comment = require('../../services/comment.js')
+const User = require('../../services/user.js')
 const Event = require('../../lib/event.js')
 const app = getApp()
 
@@ -87,10 +88,10 @@ page({
       title: '评论提交中...'
     })
     comment.add(Object.assign({}, userInfo, { comment: value })).then(data => {
-      list.unshift(data)
+      wx.hideLoading({
+        success: (res) => {this.getComment(1)},
+      })
       this.setData({
-        list,
-        value: '',
         isLayerShow: false
       })
     })
@@ -117,10 +118,15 @@ page({
     msg = 'Ծ‸Ծ'
     fn = this.showLayer
 
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo
+    if (wx.getStorageSync('user_avatar_url') != null && wx.getStorageSync('user_avatar_url') != "") {
+      let userInfo = {
+        nickName: wx.getStorageSync('user_nickname'),
+        avatarUrl: wx.getStorageSync('user_avatar_url')
+      }
+      self.setData({
+        userInfo
       })
+      app.globalData.userInfo = userInfo
       fn()
       return
     }
@@ -129,6 +135,8 @@ page({
       lang: 'zh_CN',
       desc: '获取头像昵称',
       success({ userInfo }) {
+        // 信息保存到服务器
+        User.updateUserInfo(userInfo.nickName, userInfo.avatarUrl);
         self.setData({
           userInfo
         })

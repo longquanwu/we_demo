@@ -2,7 +2,6 @@
   <!-- <view class="ghost" bindtap="ghostAction"></view> -->
 
   <view class="container" wx:if="{{$ready && $pageReady}}">
-
     <view>
       <video class="video" src="{{videoUrl.wedding}}" autoplay="true" loop="true" controls="true">
       </video>
@@ -11,9 +10,9 @@
     <scroll-view class="list-wrap {{(isLayerShow || isAttendShow) ? 'blur' : ''}}" scroll-y style="height:{{height}}px" bindscrolltolower="scrollToLower">
       <view class="empty"></view>
       <view class="item-wrap" wx:for="{{list}}" wx:key="index">
-        <view class="list-item border shadow flex-wrap">
+        <view class="list-item flex-wrap">
           <image src="{{item.avatarUrl}}" class="avatar"></image>
-          <view class="flex">
+          <view class="flex" style="color: black;">
             <view class="flex-center-wrap name">
               <view class="flex bold show-dots font28">{{item.nickName}}</view>
               <view class="font24">{{item.time}}</view>
@@ -26,22 +25,22 @@
       </view>
       <view class="empty"></view>
     </scroll-view>
-    <view class="no-data" wx:if="{{!list.length}}">暂无评论</view>
-    <view class="btn-box flex-center-wrap flex-justify-around {{(isLayerShow || isAttendShow) ? 'blur' : ''}}">
-      <!-- <view class="btn border shadow" wx:if="{{userInfo}}" bindtap="showLayer">说点啥吧</view> -->
-      <button hover-class="none" class="btn border shadow" bindtap="getUserInfo" data-type="1">祝福</button>
+    <view class="no-data" wx:if="{{!list.length}}">可以留言哟~</view>
+
+    <view class="btn-box flex-center-wrap" bindtap="getUserInfo">
+      <image src="/images/icons/留言.png" class="message"></image>
     </view>
+
     <view class="fixed layer-bg flex-center-wrap flex-justify-around" wx:if="{{isLayerShow}}" bindtap="hideLayer">
       <view class="layer-wrap" catchtap="$showHeart">
         <textarea class="textarea border shadow" fixed auto-focus value="{{value}}" bindinput="setValue" data-name="value" maxlength="100" cursor-spacing="{{200}}"></textarea>
 
         <view class="flex-center-wrap flex-justify-around">
-          <view class="small-btn border shadow" bindtap="submit">发送留言</view>
-          <view class="small-btn border shadow" bindtap="hideLayer">取消</view>
+          <view class="btn border shadow" bindtap="hideLayer">取消</view>
+          <view class="btn border shadow" bindtap="submit">发送</view>
         </view>
       </view>
     </view>
 
   </view>
-  <!-- <include src="/template/system.wxml" /> -->
 </view>

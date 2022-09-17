@@ -1,84 +1,104 @@
-.list-wrap{
+.list-wrap {
   /*padding:0 40rpx;*/
   /*padding-top: 80rpx;*/
   box-sizing: border-box;
   /*overflow:hidden;*/
+  background-color: #FBBED5;
 }
-.list-item{
-  border-radius: 10rpx;
+
+.list-item {
   margin-bottom: 40rpx;
   padding: 20rpx;
   position: relative;
   overflow: hidden;
+  background-color: #FFF;
+  border-radius: 16rpx;
+  /* border: 2rpx solid #eccb90; */
 }
-.item-wrap{
+
+.item-wrap {
   padding: 0 40rpx;
 }
-.btn-box{
+
+.btn-box {
+  z-index: 999;
   position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100vw;
-  padding: 40rpx;
-  box-sizing: border-box;
-  height: 160rpx;
+  bottom: 8px;
+  right: 18px;
 }
-.btn{
+
+.message {
+  width: 60px;
+  height: 60px;
+}
+
+.btn {
   padding: 0 40rpx;
   border-radius: 60rpx;
   line-height: 60rpx;
 }
-.avatar{
+
+.avatar {
   height: 100rpx;
   width: 100rpx;
   border-radius: 50%;
   margin-right: 20rpx;
   flex-shrink: 0;
 }
-.name{
+
+.name {
   margin-bottom: 10rpx;
 }
-.layer-wrap{
+
+.layer-wrap {
   width: 100vw;
   box-sizing: border-box;
   padding: 40rpx;
 }
-.textarea{
+
+.textarea {
   box-sizing: border-box;
   width: 100%;
   padding: 20rpx;
   font-size: 24rpx;
   margin-bottom: 40rpx;
 }
-.small-btn{
+
+.small-btn {
   line-height: 50rpx;
   font-size: 24rpx;
   width: 160rpx;
   border-radius: 50rpx;
   text-align: center;
 }
-.empty{
+
+.empty {
   height: 40rpx;
 }
-.info-wrap{
+
+.info-wrap {
   margin-bottom: 80rpx;
 }
-.row{
+
+.row {
   padding: 20rpx 0;
 }
-.label{
+
+.label {
   width: 200rpx;
   padding: 20rpx 0;
   text-align: right;
 }
-.remark{
+
+.remark {
   box-sizing: border-box;
   width: 100%;
   height: 200rpx;
   padding: 10rpx 20rpx;
   line-height: 1.5;
 }
-.ghost{
+
+.ghost {
   position: absolute;
   top: 0;
   left: 0;
@@ -89,7 +109,6 @@
 
 .video {
   display: inline-block;
-  /* height: 225px; */
   line-height: 0;
   overflow: hidden;
   position: relative;

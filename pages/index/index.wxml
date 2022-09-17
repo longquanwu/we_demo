@@ -2,14 +2,13 @@
   <image src="{{$photos[$photos.length - 1].url}}" class="swiper" mode="aspectFill"></image>
 
   <view class="letter">
-      <view class="letter-box animated rollIn" bindtap="toggleCover">
-        <image class="letter-img swing animated infinite slow delay-1s" src="/images/black-gold/letter.svg" mode="aspectFit"></image>
-      </view>
+    <view class="letter-box animated rollIn" bindtap="toggleCover">
+      <image class="letter-img swing animated infinite slow delay-1s" src="{{isShowCover ? '/images/icons/邀请函-开.png' : '/images/icons/邀请函-关.png'}}" mode="aspectFit"></image>
     </view>
+  </view>
 
-  <view class="cover-container center" bindtouchstart="start" bindtouchmove="move" bindtap="">
-
-    <view hidden="{{isShowCover ? false : true}}" class="cover animated slow {{isShowCover ? 'zoomInDown2' : 'zoomOutUp2'}} {{isFirst ? 'delay-0-7s' : ''}}">
+  <view class="cover-container center">
+    <view hidden="{{isShowCover ? false : true}}" bindtap="move" class="cover animated slow zoomInDown2 delay-0-7s">
       <view class="max ele-box overflow">
         <!-- <ui-background type="1" mixed="{{false}}"></ui-background> -->
       </view>
@@ -37,8 +36,7 @@
           </view>
 
           <view class="info-box animated zoomIn delay-4s">
-            <view class="mar-b8">今日所邀</view>
-            <view class="mar-b8">皆是生命中，不同阶段</view>
+            <view class="mar-b8">今日所邀，皆是生命中，不同阶段</view>
             <view class="mar-b8">最重要的你们</view>
           </view>
 

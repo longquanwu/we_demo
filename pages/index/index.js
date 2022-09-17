@@ -63,36 +63,10 @@ page({
       isShowCover: !isShowCover
     })
   },
-  // 补充滑动切换背景图事件
-  start({ changedTouches }) {
-    if (!changedTouches[0]) return
-    const { clientY } = changedTouches[0]
-    this.setData({
-      isMoving: true,
-      y: clientY
-    })
-  },
   move({ changedTouches }) {
-    if (!changedTouches[0]) return
-    const { clientY } = changedTouches[0]
-    const { y, isMoving, current, $indexBanners } = this.data
-    const len = $indexBanners.length
-
-    if (!isMoving) {
-      return
-    }
-    if (y - clientY >= 30) {
-      this.setData({
-        current: current + 1 >= len ? 0 : current + 1,
-        isMoving: false
-      })
-    }
-    if (y - clientY <= -30) {
-      this.setData({
-        current: current - 1 <= -1 ? len - 1 : current - 1,
-        isMoving: false
-      })
-    }
+    this.setData({
+      isShowCover: !this.data.isShowCover
+    })
   },
   onShareAppMessage() {
     return {

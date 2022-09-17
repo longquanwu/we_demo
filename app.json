@@ -1,21 +1,20 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/navigator/index",
     "pages/comment/index",
-    "pages/photo/index",
-    "pages/login/index"
+    "pages/photo/index"
   ],
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#FFF",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#FBBED5",
     "navigationBarTitleText": "小小的婚礼",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#FBBED5"
   },
   "tabBar": {
-    "color": "black",
-    "selectedColor": "#31869B",
-    "backgroundColor": "#fff",
+    "color": "#FFFAFA",
+    "selectedColor": "#1C1C1C",
+    "backgroundColor": "#FBBED5",
     "list": [
       {
         "text": "请柬",
@@ -26,8 +25,8 @@
       {
         "text": "相册",
         "pagePath": "pages/photo/index",
-        "iconPath": "/images/icons/同心锁.png",
-        "selectedIconPath": "/images/icons/同心锁.png"
+        "iconPath": "/images/icons/爱情mv-关.png",
+        "selectedIconPath": "/images/icons/爱情mv-开.png"
       },
       {
         "pagePath": "pages/comment/index",
