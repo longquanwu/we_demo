@@ -34,4 +34,10 @@ page({
       }
     })
   },
+  onShareAppMessage() {
+    return {
+      title: `我们结婚啦💖`,
+      path: '/' + this.route
+    }
+  }
 })

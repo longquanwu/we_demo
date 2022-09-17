@@ -70,7 +70,7 @@ page({
   },
   onShareAppMessage() {
     return {
-      title: `婚礼邀请函`,
+      title: `我们结婚啦💖`,
       path: '/' + this.route
     }
   }
