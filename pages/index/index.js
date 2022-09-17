@@ -17,7 +17,8 @@ page({
     "latitude": 30.599615,
     "longitude": 119.882985,
     markers: [{
-      "height": 40,
+      "height": 50,
+      "width": 50,
       "iconPath": "/images/nav.png",
       "id": 1,
       "label": {
@@ -34,7 +35,6 @@ page({
       },
       "latitude": 30.599615,
       "longitude": 119.882985,
-      "width": 40
     }]
   },
   markertap() {
@@ -95,9 +95,8 @@ page({
     }
   },
   onShareAppMessage() {
-    const { info } = app.globalData
     return {
-      title: `邀请您于${info.$date1} ${info.$date2}参加${info.$groom}与${info.$bride}的结婚典礼。`,
+      title: `婚礼邀请函`,
       path: '/' + this.route
     }
   }

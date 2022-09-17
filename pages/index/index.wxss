@@ -52,10 +52,9 @@
   width: 100%;
   text-align: center;
   height: 120rpx;
-  position: absolute;
+  position: fixed;
   left: 0%;
-  /*margin-left: -60rpx;*/
-  top: -60rpx;
+  top: 60rpx;
   z-index: 999;
 }
 
@@ -71,9 +70,10 @@
 }
 
 .map {
-  top: 45%;
+  top: 50%;
   width: 90vw;
   height: 600rpx;
+  margin-top: 50px;
 }
 
 .flex-wrap,
