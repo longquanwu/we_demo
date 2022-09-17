@@ -28,7 +28,7 @@
     <view class="no-data" wx:if="{{!list.length}}">可以留言哟~</view>
 
     <view class="btn-box flex-center-wrap" bindtap="getUserInfo">
-      <image src="/images/icons/留言.png" class="message"></image>
+      <image src="/images/icons/edit_message.svg" class="message"></image>
     </view>
 
     <view class="fixed layer-bg flex-center-wrap flex-justify-around" wx:if="{{isLayerShow}}" bindtap="hideLayer">

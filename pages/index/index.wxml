@@ -3,7 +3,7 @@
 
   <view class="letter">
     <view class="letter-box animated rollIn" bindtap="toggleCover">
-      <image class="letter-img swing animated infinite slow delay-1s" src="{{isShowCover ? '/images/icons/邀请函-开.png' : '/images/icons/邀请函-关.png'}}" mode="aspectFit"></image>
+      <image class="letter-img swing animated infinite slow delay-1s" src="{{isShowCover ? '/images/icons/invite_open.png' : '/images/icons/invite_close.png'}}" mode="aspectFit"></image>
     </view>
   </view>
 
