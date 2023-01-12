@@ -2,7 +2,7 @@
   <!-- <view class="ghost" bindtap="ghostAction"></view> -->
 
   <view class="container" wx:if="{{$ready && $pageReady}}">
-    <view>
+    <view hidden="{{showEditMessage ? false : true}}">
       <video class="video" src="{{videoUrl.wedding}}" autoplay="true" loop="true" controls="true">
       </video>
     </view>
@@ -27,7 +27,7 @@
     </scroll-view>
     <view class="no-data" wx:if="{{!list.length}}">可以留言哟~</view>
 
-    <view class="btn-box flex-center-wrap" bindtap="getUserInfo">
+    <view hidden="{{showEditMessage ? false : true}}" class="btn-box flex-center-wrap" bindtap="getUserInfo">
       <image src="/images/icons/edit_message.svg" class="message"></image>
     </view>
 

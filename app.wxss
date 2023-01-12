@@ -19,6 +19,7 @@ page{
   min-height: 100vh;
   box-sizing: border-box;
   position: relative;
+  background-color: #FBBED5;
 }
 .auto{
   margin-right: auto;

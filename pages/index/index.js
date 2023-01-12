@@ -4,7 +4,7 @@ const app = getApp()
 page({
   data: {
     $ready: true,
-    isShowCover: true,
+    tabType: "invite",
     isFirst: true,
     current: 0,
     isMoving: false,
@@ -35,7 +35,29 @@ page({
       },
       "latitude": 30.599615,
       "longitude": 119.882985,
-    }]
+    }],
+    meeting: [{ // 婚礼流程
+      time: '10:00-12:00',
+      text: '抢亲'
+    }, {
+      time: '12:00-14:00',
+      text: '午宴'
+    }, {
+      time: '14:30-15:30',
+      text: 'First look'
+    }, {
+      time: '16:00-16:30',
+      text: '宾客签到'
+    }, {
+      time: '16:30-17:30',
+      text: '婚礼仪式'
+    }, {
+      time: '18:00-19:30',
+      text: '晚宴'
+    }, {
+      time: '19:00-',
+      text: 'After party'
+    }],
   },
   markertap() {
     const { latitude, longitude, $hotel, $address } = this.data
@@ -47,6 +69,12 @@ page({
     })
   },
   onReady() {
+    let meeting = wx.getStorageSync('meeting');
+    if (meeting != null && meeting != "") {
+      this.setData({
+        meeting: meeting
+      })
+    }
   },
   // 切换 封面是否显示
   toggleCover({
@@ -54,13 +82,23 @@ page({
       dataset: { type }
     }
   }) {
-    const { isShowCover } = this.data
-    if (type === 'swiper' && !isShowCover) {
+    const { tabType } = this.data
+    if (type === tabType) {
       return
     }
+
+    let meeting = wx.getStorageSync('meeting');
+    if (meeting != null && meeting != "") {
+      console.log(meeting)
+
+      this.setData({
+        meeting: meeting
+      })
+    }
+
     this.setData({
       isFirst: false,
-      isShowCover: !isShowCover
+      tabType: type
     })
   },
   move({ changedTouches }) {

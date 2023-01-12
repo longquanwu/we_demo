@@ -1,17 +1,11 @@
-<view class="container {{$style}}" bindtap="$showHeart">
-  <image src="{{$photos[$photos.length - 1].url}}" class="swiper" mode="aspectFill"></image>
-
-  <view class="letter">
-    <view class="letter-box animated rollIn" bindtap="toggleCover">
-      <image class="letter-img swing animated infinite slow delay-1s" src="{{isShowCover ? '/images/icons/invite_open.png' : '/images/icons/invite_close.png'}}" mode="aspectFit"></image>
-    </view>
-  </view>
-
+<view class="container {{tabType != 'list' ? $style : ''}}" bindtap="$showHeart">
+  <image hidden="{{tabType == 'list' ? true : false}}" src="{{$photos[$photos.length - 1].url}}" class="swiper" mode="aspectFill"></image>
+  
   <view class="cover-container center">
-    <view hidden="{{isShowCover ? false : true}}" bindtap="move" class="cover animated slow zoomInDown2 delay-0-7s">
-      <view class="max ele-box overflow">
+    <view hidden="{{tabType == 'invite' ? false : true}}" bindtap="move" bindtouchmove="move" class="cover animated slow zoomInDown2 delay-0-4s">
+      <!-- <view class="max ele-box overflow"> -->
         <!-- <ui-background type="1" mixed="{{false}}"></ui-background> -->
-      </view>
+      <!-- </view> -->
       <view class="max">
         <view class="border max ele-box animated zoomIn delay-1-7s"></view>
         <view class="border max ele-box animated zoomIn delay-1-8s"></view>
@@ -20,12 +14,12 @@
         <view class="border max ele-box animated zoomIn delay-2-1s"></view>
 
         <view class="max pad40 center font28">
-          <view class="info-box title-box flex-center-wrap flex-justify-around animated fadeInDown delay-2-5s">
-            <image src="/images/black-gold/hun.png" mode="aspectFit" class="hanzi animated infinite bounce slow delay-3-5s"></image>
-            <image src="/images/black-gold/li.png" mode="aspectFit" class="hanzi animated infinite bounce slow delay-3-6s"></image>
-            <image src="/images/black-gold/yao.png" mode="aspectFit" class="hanzi animated infinite bounce slow delay-3-7s"></image>
-            <image src="/images/black-gold/qing.png" mode="aspectFit" class="hanzi animated infinite bounce slow delay-3-8s"></image>
-            <image src="/images/black-gold/han.png" mode="aspectFit" class="hanzi animated infinite bounce slow delay-3-9s"></image>
+          <view class="info-box title-box flex-center-wrap flex-justify-around animated fadeInDown delay-2-4s">
+            <image src="/images/black-gold/hun.png" mode="aspectFit" class="hanzi animated infinite bounce slow delay-1-4s"></image>
+            <image src="/images/black-gold/li.png" mode="aspectFit" class="hanzi animated infinite bounce slow delay-1-5s"></image>
+            <image src="/images/black-gold/yao.png" mode="aspectFit" class="hanzi animated infinite bounce slow delay-1-6s"></image>
+            <image src="/images/black-gold/qing.png" mode="aspectFit" class="hanzi animated infinite bounce slow delay-1-7s"></image>
+            <image src="/images/black-gold/han.png" mode="aspectFit" class="hanzi animated infinite bounce slow delay-1-8s"></image>
           </view>
           <view class="name-box flex-center-wrap flex-justify-around">
             <view class="animated fadeInRightBig delay-2-5s bride">吴龙泉</view>
@@ -47,14 +41,28 @@
 
           <view class="info-box">
             <view class="mar-b8 bold animated delay-5s fadeInUpBig">【 地址 · Address 】</view>
-            <view class="mar-b8 animated zoomIn delay-6s">浙江省·湖州市</view>
             <view class="animated zoomIn delay-6-2s">莫干山·裸心堡</view>
           </view>
         </view>
       </view>
     </view>
 
-    <view hidden="{{isShowCover ? true : false}}">
+    <view hidden="{{tabType == 'list' ? false : true}}">
+      <view class="wedding_list">
+        <view class="main_title">流程</view>
+        <view class="metting_model">
+          <!-- <view class="line"></view> -->
+          <view class="item" wx:for="{{meeting}}" wx:key="index">
+            <view class="item_text">{{item.time}}</view>
+            <ui-heart double></ui-heart>
+            <!-- <image src="/images/icons/navigation.svg"></image> -->
+            <view class="item_text">{{item.text}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view hidden="{{tabType != 'navigation' ? true : false}}">
       <map class="map border shadow100" scale="14" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" bindmarkertap="markertap" show-location show-compass></map>
 
       <view class="flex-center-wrap flex-justify-around phone-container">
@@ -73,6 +81,15 @@
     </view>
   </view>
 
+  <view hidden="{{tabType == 'list' ? true : false}}" class="btn-box flow delay-1s" bindtap="toggleCover" data-type="list">
+    <image src="/images/icons/list.png" class="option"></image>
+  </view>
+  <view hidden="{{tabType == 'invite' ? true : false}}" class="btn-box invite" bindtap="toggleCover" data-type="invite">
+    <image src="/images/icons/invite_close.png" class="option"></image>
+  </view>
+  <view hidden="{{tabType == 'navigation' ? true : false}}" class="btn-box navigation" bindtap="toggleCover" data-type="navigation">
+    <image src="/images/icons/tower.png" class="option"></image>
+  </view>
 
   <include src="/template/system.wxml" />
 </view>

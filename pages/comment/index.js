@@ -22,7 +22,7 @@ page({
     userInfo: null,
     // 是否显示评论弹窗
     isLayerShow: false,
-    
+    showEditMessage: false,
     // 评论
     value: '',
     // 当前评论页数
@@ -31,9 +31,15 @@ page({
   onLoad() {
     wx.getSystemInfo({
       success: ({ windowHeight }) => {
-        this.setData({
-          height: windowHeight - 225
-        })
+        if (wx.getStorageSync('show_edit_message') == 1) {
+          this.setData({
+            height: windowHeight - 225
+          })
+        } else {
+          this.setData({
+            height: windowHeight
+          })
+        }
       }
     })
     // 获取评论
@@ -43,6 +49,12 @@ page({
         $pageReady: true
       })
     })
+
+    if (wx.getStorageSync('show_edit_message') == 1) {
+      this.setData({
+        showEditMessage: true
+      })
+    }
   },
   onShow() {
     Event.emit('stateChange', {
@@ -160,5 +172,11 @@ page({
     this.setData({
       isLayerShow: false
     })
+  },
+  onShareAppMessage() {
+    return {
+      title: `我们结婚啦💖`,
+      path: '/' + this.route
+    }
   }
 })

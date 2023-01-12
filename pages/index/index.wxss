@@ -11,7 +11,7 @@
 .cover-container {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 45%;
   transform: translate(-50%, -50%);
 }
 
@@ -78,31 +78,109 @@
 
 .flex-wrap,
 .flex-center-wrap,
-.flex-multi-row{
-  margin-top: 50px;
+.flex-multi-row {
   display: flex;
 }
+
+.phone-container {
+  margin-top: 50px;
+}
+
 .flex-center-wrap {
   align-items: center;
 }
+
 .flex-justify-between {
   justify-content: space-between;
 }
+
 .flex-justify-around {
   justify-content: space-around;
 }
+
 .flex-justify-center {
   justify-content: center;
 }
+
 .flex-multi-row {
   flex-wrap: wrap;
 }
 
-.phone-call{
+.phone-call {
   text-align: center;
   font-size: 24rpx;
 }
-.person-icon{
+
+.person-icon {
   height: 100rpx;
   width: 100rpx;
+}
+
+.btn-box {
+  z-index: 999;
+  position: fixed;
+  bottom: 24px;
+}
+
+.flow {
+  left: 32px;
+}
+
+.invite {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navigation {
+  right: 32px;
+}
+
+.option {
+  width: 40px;
+  height: 40px;
+}
+
+.wedding_list {
+  color: #1C1C1C;
+  width: 300px;
+}
+.main_title {
+  font-family: TencentSansW7;
+  font-size: 80rpx;
+  letter-spacing: 0;
+  text-align: justify;
+}
+.metting_model .line {
+  background: linear-gradient(#EE6363, #FF0000, #EE6363);
+  width: 2rpx;
+  height: 100%;
+  position: absolute;
+  left: calc(50% - 1rpx);
+  top: 0rpx;
+  z-index: -1;
+}
+
+.metting_model .item {
+  position: relative;
+  width: 100%;
+  display: flex;
+  margin: 40rpx 0;
+}
+.metting_model .item .item_text {
+  width: 50%;
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 44rpx;
+  padding: 0 20rpx;
+}
+
+.metting_model .item image {
+  position: absolute;
+  left: calc(50% - 12rpx);
+  top: 10rpx;
+  width: 24rpx;
+  height: 24rpx;
+  transform: rotate(-315deg);
+  background: #206BED;
 }

@@ -23,6 +23,8 @@ export async function initUserInfo() {
     wx.setStorageSync('user_open_id', resData['open_id'])
     wx.setStorageSync('user_nickname', resData['nickname'])
     wx.setStorageSync('user_avatar_url', resData['avatar_url'])
+    wx.setStorageSync('show_edit_message', resData['show_edit_message'])
+    wx.setStorageSync('meeting', resData['meeting'])
     return resData;
   } else {
     console.log('登录失败！' + res.errMsg);
